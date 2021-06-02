@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1737dc96-d63e-464d-a6a0-b1126aeb7fdd" name="Default Changelist" comment="" />
+    <list default="true" id="1737dc96-d63e-464d-a6a0-b1126aeb7fdd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Image-Classification-Deploy-Android(model Daun)/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Image-Classification-Deploy-Android(model Daun)/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image-Classification-Deploy-Android(model Daun)/app/src/main/assets/modelDaun.tflite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image-Classification-Deploy-Android(model Daun)/app/src/main/assets/newdict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Image-Classification-Deploy-Android(model Daun)/app/src/main/assets/newdict.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="1tIfC4MHOsXvuJbfCd82Yk4M9ac" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
