@@ -54,7 +54,8 @@ This function is an Image data generator so that we generate image data from a f
 * range 0.2 and do a Horizontal flip
 
 # Creating Convolutional Neural Network Structure
-After creating the generator dataset, then we create a neural network. We use transfer learning from Tensorflow Keras. in this project we use Xception for related papers can be read
+After creating the generator dataset, then we create a neural network. We use transfer learning from Tensorflow Keras. in this project we use Xception for related papers can be read [Xception: Deep Learning with Depthwise Separable Convolutions (CVPR 2017)](https://arxiv.org/abs/1610.02357)
+
 
 # Compile model
 * Optimizer = is the optimization method used.
