@@ -8,8 +8,8 @@ leaf disease image classification, Using Keras-Tensorflow
 * Using the existing CNN Model Architecture.
 * Compile Model
 * Model Training
-* Model Save
 * Model Evaluation
+* Model Save
 * Create Predict Functions.
 * Test Deploy Model With Flask (Python)
 * Convert Model to TFLite
@@ -55,12 +55,40 @@ This function is an Image data generator so that we generate image data from a f
 
 # Creating Convolutional Neural Network Structure
 After creating the generator dataset, then we create a neural network. We use transfer learning from Tensorflow Keras. in this project we use Xception for related papers can be read [Xception: Deep Learning with Depthwise Separable Convolutions (CVPR 2017)](https://arxiv.org/abs/1610.02357)
-![model1](https://user-images.githubusercontent.com/67249292/120634513-89713100-c495-11eb-8d5d-509cb029aa4d.png)
 
+Example of Model Tomato leaf classification Visualization results :
+
+![model1](https://user-images.githubusercontent.com/67249292/120635482-b96d0400-c496-11eb-80b7-d810949db504.png)
 
 # Compile model
 * Optimizer = is the optimization method used.
 * loss = is a method of measuring the loss value based on what value. because Making the data flow we use categorical so that in this loss value we also use categorical loss.
 * Metrics = The matrix value measured in this project we use the accuracy value as the measurement value.
 
+# Model Tomato leaf classification training process :
 
+![image](https://user-images.githubusercontent.com/67249292/120635149-554a4000-c496-11eb-8474-657716dbb722.png)
+
+And the results of the training are like that, the results are apparently not optimal but enough for this experiment, it turns out to be for this model. Where :
+
+![image](https://user-images.githubusercontent.com/67249292/120635987-4a43df80-c497-11eb-95cc-63b23a35a5a4.png)
+
+![image](https://user-images.githubusercontent.com/67249292/120636020-56c83800-c497-11eb-85ab-01e9086f2e49.png)
+
+You can check here to see all the notebooks that have been built [notebook Build ML](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/notebook/BuildML)
+
+# Model Tomato leaf classification Evaluation
+
+Accuracy on training data: 0.9838 
+
+Loss on training data: 0.0629 
+
+Accuracy on test data: 0.9875 
+
+Loss on test data: 0.0487 
+
+# Save all the models that have been trained
+You can check here to see all the models that have been built [model_project](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/model_project)
+
+# Creating an example deploy Production Function using Flask Python
+You can check here to see deploy with [Flask](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/Flask/Deploy%20Test)
