@@ -23,7 +23,7 @@ leaf disease image classification, Using Keras-Tensorflow
 # Preparing the Data-set
 prepare the dataset first. Here we use an example of a leaf disease image from Kaggle, so that it is convenient for the data, .
 
-   └── Data
+ └── Data
         ├── Anggur
         │   ├── Busuk Hitam     
         │   ├── Esca (Campak hitam)        
@@ -84,7 +84,7 @@ prepare the dataset first. Here we use an example of a leaf disease image from K
 In this first process, we want to divide the data into 3 parts. namely train, test, and validation. with the proportion (80,10,10).
 Then, in this process we want to split the data for each directories into something like this.
 
-   └── Data
+ └── Data
         ├── Anggur
         │   ├── Busuk Hitam
         │   ├── Esca (Campak hitam)
