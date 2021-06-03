@@ -56,6 +56,10 @@ This function is an Image data generator so that we generate image data from a f
 # Creating Convolutional Neural Network Structure
 After creating the generator dataset, then we create a neural network. We use transfer learning from Tensorflow Keras. in this project we use Xception for related papers can be read [Xception: Deep Learning with Depthwise Separable Convolutions (CVPR 2017)](https://arxiv.org/abs/1610.02357)
 
+Model Summary : 
+
+![image](https://user-images.githubusercontent.com/67249292/120637994-c808ea80-c499-11eb-84e7-126c25913f2c.png)
+
 Example of Model Tomato leaf classification Visualization results :
 
 ![model1](https://user-images.githubusercontent.com/67249292/120635482-b96d0400-c496-11eb-80b7-d810949db504.png)
@@ -77,14 +81,63 @@ And the results of the training are like that, the results are apparently not op
 
 You can check here to see all the notebooks that have been built [notebook Build ML](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/notebook/BuildML)
 
-# Model Tomato leaf classification Evaluation
+# Model Evaluation
 
-Accuracy on training data: 0.9838 
+Model Apple leaf classification :
 
+
+Accuracy on training data: 0.9968, 
+Loss on training data: 0.0064 
+
+Accuracy on test data: 1.0000,
+Loss on test data: 0.0033 
+
+Model Corn leaf classification :
+
+Accuracy on training data: 0.9869,
+Loss on training data: 0.0429 
+
+Accuracy on test data: 0.9836, 
+Loss on test data: 0.0422 
+
+Model Grape leaf classification :
+
+Accuracy on training data: 0.9956, 
+Loss on training data: 0.0125 
+
+Accuracy on test data: 0.9945, 
+Loss on test data: 0.0299 
+
+Model Leaf classification :
+
+Accuracy on training data: 0.9881, 
+Loss on training data: 0.0361 
+
+Accuracy on test data: 0.9888, 
+Loss on test data: 0.0383 
+
+Model Potato leaf classification :
+
+Accuracy on training data: 1.0000, 
+Loss on training data: 0.0014 
+
+Accuracy on test data: 1.0000, 
+Loss on test data: 0.0022 
+
+Model Rice leaf classification :
+
+Accuracy on training data: 0.8333, 
+Loss on training data: 16.4998 
+
+Accuracy on test data: 0.6667, 
+Loss on test data: 19.8331 
+
+Model Tomato leaf classification :
+
+Accuracy on training data: 0.9838, 
 Loss on training data: 0.0629 
 
-Accuracy on test data: 0.9875 
-
+Accuracy on test data: 0.9875,
 Loss on test data: 0.0487 
 
 # Save all the models that have been trained
