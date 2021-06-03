@@ -36,11 +36,11 @@ Then, in this process we want to split the data for each directories into someth
 # Prepare global variables for training
 In this section we will determine how many epochs for the training process, input dimension, batch_size. etc
 Input parameters for network
-dim = (150, 150)
-channel = (3, )
-input_shape = dim + channel
-batch_size = 16
-epoch = 10 & 20
+* dim = (150, 150)
+* channel = (3, )
+* input_shape = dim + channel
+* batch_size = 16
+* epoch = 10 & 20 
 
 # Preparing the dataset pipeline and augmentation For the dataset creation process
 The pipeline dataset is a command to extract data in the form of digital images/images, which come from a folder into an array that can be read by tensorflow, the function used is *from tensorflow.keras.preprocessing.image import ImageDataGenerator*
