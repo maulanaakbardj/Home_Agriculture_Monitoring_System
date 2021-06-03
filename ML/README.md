@@ -12,6 +12,7 @@ leaf disease image classification, Using Keras-Tensorflow
 * Model Evaluation
 * Create Predict Functions.
 * Test Deploy Model With Flask (Python)
+* Convert Model to TFLite
 
 # Libraries used :
 
