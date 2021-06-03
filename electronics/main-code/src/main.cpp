@@ -3,6 +3,7 @@
 #include <DHT.h>
 #include <WiFi.h>
 #include <Adafruit_Sensor.h>
+#include <ESPAsyncWebServer.h>
 #include <HTTPClient.h>
 
 // initialize pin
@@ -24,23 +25,23 @@ DHT dht(DHTPIN, DHT11);
 // initialize WiFi connection
 const char *ssid = "Really Realme";
 const char *password = "20002002";
-const char *serverName = "IP server dan portnya";
+const char *serverName = "http://192.168.43.209:5000/auth/update";
 
 // Timer variables
 unsigned long lastTime = 0;
 // delay each post by 10 seccond
-unsigned long timerDelay = 10000;
+unsigned long timerDelay = 5000;
 
 // sensor reading variable
-float temperature;
-float humidity;
-float soil;
-int analog_soil;
+float temperature = 0;
+float humidity = 0;
+float soil = 0;
+int analog_soil = 0;
 
 void getSensorReadings()
 {
-    temperature = dht.readTemperature();
-    humidity = dht.readHumidity();
+    temperature = 10;
+    humidity += 5;
     analog_soil = analogRead(SOILPIN);
     soil = map(analog_soil, soil_in_air, soil_in_water, 0, 100);
     if (soil > 100)
@@ -95,14 +96,14 @@ void loop()
             pump_state = "OFF";
         }
         // add sensor reading to json file
-        String json_file = "{\"temp\":\"" + String(temperature) + "\",\"humid\":\"" + String(humidity) + "\",\"soil\":\"" + String(soil) + "\"}";
+        String json_file = "username=10&password=" + String(humidity);
 
         if (WiFi.status() == WL_CONNECTED)
         {
             HTTPClient http;
             http.begin(serverName);
 
-            http.addHeader("Content-Type", "application/json");
+            http.addHeader("Content-Type", "application/x-www-form-urlencoded");
             int httpResponseCode = http.POST(json_file);
 
             Serial.print("HTTP Response code: ");
