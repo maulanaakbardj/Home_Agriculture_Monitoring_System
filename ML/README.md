@@ -83,8 +83,7 @@ You can check here to see all the notebooks that have been built [notebook Build
 
 # Model Evaluation
 
-Model Apple leaf classification :
-
+* Model Apple leaf classification :
 
 Accuracy on training data: 0.9968, 
 Loss on training data: 0.0064 
@@ -92,7 +91,7 @@ Loss on training data: 0.0064
 Accuracy on test data: 1.0000,
 Loss on test data: 0.0033 
 
-Model Corn leaf classification :
+* Model Corn leaf classification :
 
 Accuracy on training data: 0.9869,
 Loss on training data: 0.0429 
@@ -100,7 +99,7 @@ Loss on training data: 0.0429
 Accuracy on test data: 0.9836, 
 Loss on test data: 0.0422 
 
-Model Grape leaf classification :
+* Model Grape leaf classification :
 
 Accuracy on training data: 0.9956, 
 Loss on training data: 0.0125 
@@ -108,7 +107,7 @@ Loss on training data: 0.0125
 Accuracy on test data: 0.9945, 
 Loss on test data: 0.0299 
 
-Model Leaf classification :
+* Model Leaf classification :
 
 Accuracy on training data: 0.9881, 
 Loss on training data: 0.0361 
@@ -116,7 +115,7 @@ Loss on training data: 0.0361
 Accuracy on test data: 0.9888, 
 Loss on test data: 0.0383 
 
-Model Potato leaf classification :
+* Model Potato leaf classification :
 
 Accuracy on training data: 1.0000, 
 Loss on training data: 0.0014 
@@ -124,7 +123,7 @@ Loss on training data: 0.0014
 Accuracy on test data: 1.0000, 
 Loss on test data: 0.0022 
 
-Model Rice leaf classification :
+* Model Rice leaf classification :
 
 Accuracy on training data: 0.8333, 
 Loss on training data: 16.4998 
@@ -132,7 +131,7 @@ Loss on training data: 16.4998
 Accuracy on test data: 0.6667, 
 Loss on test data: 19.8331 
 
-Model Tomato leaf classification :
+* Model Tomato leaf classification :
 
 Accuracy on training data: 0.9838, 
 Loss on training data: 0.0629 
