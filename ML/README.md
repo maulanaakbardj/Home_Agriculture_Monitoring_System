@@ -144,3 +144,9 @@ You can check here to see all the models that have been built [model_project](ht
 
 # Creating an example deploy Production Function using Flask Python
 You can check here to see deploy with [Flask](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/Flask/Deploy%20Test)
+
+# Convert Model to TFLite
+You can check here to see how to [covert to TFLite](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/notebook/Deploy)
+
+and You can check here to see [result TFLite](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/TFLite)
+
