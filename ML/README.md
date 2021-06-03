@@ -29,6 +29,7 @@ In this first process, we want to divide the data into 3 parts. namely train, te
 Then, in this process we want to split the data for each directories into something like this.
 
 ![image](https://user-images.githubusercontent.com/67249292/120629667-3f398100-c490-11eb-9680-e57a003da197.png)
+
 ![image](https://user-images.githubusercontent.com/67249292/120629731-51b3ba80-c490-11eb-9315-a85961f4b2d8.png)
 
         
