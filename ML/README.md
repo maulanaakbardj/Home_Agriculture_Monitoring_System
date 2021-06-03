@@ -23,9 +23,9 @@ leaf disease image classification, Using Keras-Tensorflow
 # Preparing the Data-set
 prepare the dataset first. Here we use an example of a leaf disease image from Kaggle, so that it is convenient for the data, .
 
- └── Data
-        ├── Anggur
-        │   ├── Busuk Hitam     
+└── Data
+    ├── Anggur
+    ├──  Busuk Hitam     
         │   ├── Esca (Campak hitam)        
         │   ├── Hawar Daun (Bercak Daun Isariopsis)        
         │   └── Sehat        
