@@ -26,7 +26,6 @@ prepare the dataset first. Here we use an example of a leaf disease image from K
 └── Data
 
         ├── Anggur
-        
         │   ├── Busuk Hitam
         
         │   ├── Esca (Campak hitam)
