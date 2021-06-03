@@ -23,73 +23,40 @@ leaf disease image classification, Using Keras-Tensorflow
 # Preparing the Data-set
 prepare the dataset first. Here we use an example of a leaf disease image from Kaggle, so that it is convenient for the data, .
 
-└── Data
-
+   └── Data
         ├── Anggur
-        │   ├── Busuk Hitam
-        
-        │   ├── Esca (Campak hitam)
-        
-        │   ├── Hawar Daun (Bercak Daun Isariopsis)
-        
-        │   └── Sehat
-        
-        ├── Apel
-        
-        │   ├── Busuk Hitam
-        
-        │   ├── Karat Apel Cedar
-        
-        │   ├── Keropeng Apel
-        
-        │   └── Sehat
-        
-        ├── Daun
-        
-        │   ├── Bercak Bakteri
-        
-        │   ├── Bercak Daun Abu-Abu
-        
-        │   ├── Bercak Daun Coklat
-        
-        │   ├── Bercak Daun Target Spot
-        
-        │   ├── Bercak Kering Alternaria
-        
-        │   ├── Bintik daun Septoria
-        
-        │   ├── Busuk Hitam
-        
-        │   ├── Esca (Campak hitam)
-        
-        │   ├── Hangus Daun
-        
-        │   ├── Hawar Daun (Bercak Daun Isariopsis)
-        
-        │   ├── Hawar Daun Bakteri
-        
-        │   ├── Hawar Daun
-        
-        │   ├── Jamur tepung
-        
-        │   ├── Kapang Daun
-        
-        │   ├── Karat Apel Cedar
-        
-        │   ├── Karat Daun
-        
-        │   ├── Keropeng Apel
-        
-        │   ├── Sehat
-        
-        │   ├── Smut Daun
-        
-        │   ├── Tungau Laba laba Spider Mite
-        
-        │   └── Virus Kuning Keriting
-        
-        ├── Jagung
-        
+        │   ├── Busuk Hitam     
+        │   ├── Esca (Campak hitam)        
+        │   ├── Hawar Daun (Bercak Daun Isariopsis)        
+        │   └── Sehat        
+        ├── Apel        
+        │   ├── Busuk Hitam        
+        │   ├── Karat Apel Cedar        
+        │   ├── Keropeng Apel        
+        │   └── Sehat        
+        ├── Daun        
+        │   ├── Bercak Bakteri        
+        │   ├── Bercak Daun Abu-Abu        
+        │   ├── Bercak Daun Coklat        
+        │   ├── Bercak Daun Target Spot        
+        │   ├── Bercak Kering Alternaria        
+        │   ├── Bintik daun Septoria        
+        │   ├── Busuk Hitam        
+        │   ├── Esca (Campak hitam)        
+        │   ├── Hangus Daun        
+        │   ├── Hawar Daun (Bercak Daun Isariopsis)        
+        │   ├── Hawar Daun Bakteri        
+        │   ├── Hawar Daun        
+        │   ├── Jamur tepung        
+        │   ├── Kapang Daun        
+        │   ├── Karat Apel Cedar        
+        │   ├── Karat Daun        
+        │   ├── Keropeng Apel        
+        │   ├── Sehat        
+        │   ├── Smut Daun        
+        │   ├── Tungau Laba laba Spider Mite        
+        │   └── Virus Kuning Keriting        
+        ├── Jagung        
         │   ├── Bercak Daun Abu-Abu
         │   ├── Hawar Daun
         │   ├── Karat Daun
@@ -117,7 +84,7 @@ prepare the dataset first. Here we use an example of a leaf disease image from K
 In this first process, we want to divide the data into 3 parts. namely train, test, and validation. with the proportion (80,10,10).
 Then, in this process we want to split the data for each directories into something like this.
 
-└── Data
+   └── Data
         ├── Anggur
         │   ├── Busuk Hitam
         │   ├── Esca (Campak hitam)
