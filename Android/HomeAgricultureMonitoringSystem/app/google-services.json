@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "345440433068",
+    "project_id": "capstone-cap0488",
+    "storage_bucket": "capstone-cap0488.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345440433068:android:bd85b0a3fd96dbe1398009",
+        "android_client_info": {
+          "package_name": "com.cap0488.homeagriculturemonitoringsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "345440433068-bojuptumr7a9s5u3ksic2eff3uqa70a9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsxN9Qd1RV_h5M7qTsL66tJHG26IITl5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "345440433068-bojuptumr7a9s5u3ksic2eff3uqa70a9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345440433068:android:06e7967289366328398009",
+        "android_client_info": {
+          "package_name": "com.reza.capstonecap0488"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "345440433068-bojuptumr7a9s5u3ksic2eff3uqa70a9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsxN9Qd1RV_h5M7qTsL66tJHG26IITl5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "345440433068-bojuptumr7a9s5u3ksic2eff3uqa70a9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
