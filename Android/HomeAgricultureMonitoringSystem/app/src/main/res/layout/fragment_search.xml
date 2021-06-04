@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.page2.search.SearchFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title_app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textStyle="bold"
+            android:paddingStart="15dp"
+            android:paddingBottom="10dp"
+            android:fontFamily="monospace"
+            android:textSize="25sp"
+            android:background="?attr/colorPrimaryVariant"
+
+            android:text="HAMS" />
+
+        <TextView
+            android:layout_below="@id/title_app"
+            android:id="@+id/text_nameapp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingStart="35dp"
+            android:paddingBottom="10dp"
+            android:fontFamily="monospace"
+            android:textSize="10sp"
+            android:background="?attr/colorPrimaryVariant"
+
+            android:text="@string/app_name" />
+
+        <TextView
+            android:layout_below="@+id/text_nameapp"
+            android:id="@+id/wave"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_wave"
+
+            />
+
+        <TextView
+            android:layout_below="@+id/wave"
+            android:id="@+id/text_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="15sp"
+            android:text="@string/jenis_tanaman" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@+id/text_home"
+            android:id="@+id/rv_article"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:listitem="@layout/recycleview_big">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </RelativeLayout>
+
+
+
+
+</androidx.core.widget.NestedScrollView>

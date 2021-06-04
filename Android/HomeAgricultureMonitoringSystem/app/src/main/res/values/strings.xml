@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Home Agriculture Monitoring System</string>
+    <string name="title_home">Home</string>
+    <string name="title_monitoring">Monitoring</string>
+    <string name="title_search">Find</string>
+    <string name="image_content">image content</string>
+    <string name="article_title">9 Manfaat Tomat yang Menyehatkan dan Menyegarkan Jiwa Raga</string>
+    <string name="article_notif">Here is Articles for you</string>
+    <string name="article">Article</string>
+    <string name="garden">Your Plant</string>
+    <string name="jenis_tanaman">Pilih Jenis Tanaman</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="identifikasi_gambar">Identifikasi Gambar</string>
+</resources>
