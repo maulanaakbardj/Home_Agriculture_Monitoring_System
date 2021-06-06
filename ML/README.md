@@ -1,152 +1,97 @@
 # Machine Learning Home Agriculture Monitoring System
-leaf disease image classification, Using Keras-Tensorflow
+we'll use TensorFlow 2 to create an image classification model, train it with a leaf disease dataset, and convert it to TensorFlow Lite using post-training quantization).
 
-# This directory will cover several things:
+The model is based on a pre-trained version of MobileNet V2. We'll start by retraining only the classification layers, reusing MobileNet's pre-trained feature extractor layers. Then we'll fine-tune the model by updating weights in some of the feature extractor layers. This type of transfer learning is much faster than training the entire model from scratch.
 
-* Creating a Pipeline for the input dataset
-* Building a Convolutional Neural Network Model,
-* Using the existing CNN Model Architecture.
-* Compile Model
-* Model Training
-* Model Evaluation
-* Model Save
-* Create Predict Functions.
-* Test Deploy Model With Flask (Python)
-* Convert Model to TFLite
+Once it's trained, we'll use post-training quantization to convert all parameters to int8 format, which reduces the model size and increases inferencing speed. This format is also required for compatibility on the TFlite in android.
 
-# Libraries used :
+# Notebook ML 
+[fix notebook](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/blob/main/ML/notebook/leaf_classification_fix.ipynb)
+
+# Import the required libraries :
+**Note**: This notebook requires TensorFlow 2.3+ for full quantization, which currently does not work for all types of models. In particular, this notebook expects a Keras-built model and this conversion strategy currently doesn't work with models imported from a frozen graph. 
 
 * Tensorflow 
 * Numpy
-* Scikit-learn
-* PILLOW for image library
 
-# Preparing the Data-set
-prepare the dataset first. Here we use an example of a leaf disease image from Kaggle, so that it is convenient for the data, .
+In order to quantize both the input and output tensors, we need TFLiteConverter APIs that are available in TensorFlow r2.3 or higher:
 
-![image](https://user-images.githubusercontent.com/67249292/120629468-09949800-c490-11eb-91cb-05389789c8b0.png)
-        
-In this first process, we want to divide the data into 3 parts. namely train, test, and validation. with the proportion (80,10,10).
-Then, in this process we want to split the data for each directories into something like this.
+# Prepare the training data
 
-![image](https://user-images.githubusercontent.com/67249292/120629667-3f398100-c490-11eb-9680-e57a003da197.png)
+* First let's download and organize the leaf disease dataset we'll use to retrain the model. Here we use an example of a leaf disease dataset image from Kaggle ( [plantdisease](https://www.kaggle.com/emmarex/plantdisease), [new-plant-diseases-dataset](https://www.kaggle.com/vipoooool/new-plant-diseases-dataset),[rice-leaf-diseases](https://www.kaggle.com/vbookshelf/rice-leaf-diseases) ) 
+ 
+ * of several datasets combined into one [dataset](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/Data)
+ 
+ * we use ImageDataGenerator to rescale the image data into float values (divide by 255 so the tensor values are between 0 and 1), and call flow_from_directory() to create two generators: one for the training dataset and one for the validation dataset.
+ 
+ * On each iteration, these generators provide a batch of images by reading images from disk and processing them to the proper tensor size (224 x 224). The output is a tuple of (images, labels).
+ 
+ * Save the class labels to a text file.
+  
+# Build the model
 
-![image](https://user-images.githubusercontent.com/67249292/120629731-51b3ba80-c490-11eb-9315-a85961f4b2d8.png)
+we'll create a model that's capable of transfer learning on just the last fully-connected layer.
 
-        
-# Prepare global variables for training
-In this section we will determine how many epochs for the training process, input dimension, batch_size. etc
-Input parameters for network
-* dim = (150, 150)
-* channel = (3, )
-* input_shape = dim + channel
-* batch_size = 16
-* epoch = 10 & 20 
+We'll start with [MobileNet V2](https://www.tensorflow.org/api_docs/python/tf/keras/applications/mobilenet_v2) from Keras as the base model, which is pre-trained with the ImageNet dataset (trained to recognize 1,000 classes). This provides us a great feature extractor for image classification and we can then train a new classification layer with our  dataset. 
 
-# Preparing the dataset pipeline and augmentation For the dataset creation process
-The pipeline dataset is a command to extract data in the form of digital images/images, which come from a folder into an array that can be read by tensorflow, the function used is *from tensorflow.keras.preprocessing.image import ImageDataGenerator*
+**note** : paper [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381)
 
-This function is an Image data generator so that we generate image data from a file / folder that we created earlier. in this section we can determine what kind of generator / augmentation can be done.
+# Create the base model
 
-* Rescaling data to 1/255.
-* Shearing image 0.2 . scale
-* Zooming image with
-* range 0.2 and do a Horizontal flip
+When instantiating the [MobileNet V2](https://www.tensorflow.org/api_docs/python/tf/keras/applications/mobilenet_v2), we specify the include_top=False argument in order to load the network without the classification layers at the top. Then we set trainable false to freeze all the weights in the base model. This effectively converts the model into a feature extractor because all the pre-trained weights and biases are preserved in the lower layers when we begin training for our classification head.
 
-# Creating Convolutional Neural Network Structure
-After creating the generator dataset, then we create a neural network. We use transfer learning from Tensorflow Keras. in this project we use Xception for related papers can be read [Xception: Deep Learning with Depthwise Separable Convolutions (CVPR 2017)](https://arxiv.org/abs/1610.02357)
+# Add a classification head
 
-Model Summary : 
+Now we create a new [Sequential](https://www.tensorflow.org/api_docs/python/tf/keras/Sequential) model and pass the frozen [MobileNet V2](https://www.tensorflow.org/api_docs/python/tf/keras/applications/mobilenet_v2) as the base of the graph, and append new classification layers so we can set the final output dimension to match the number of classes in our dataset.
 
-![image](https://user-images.githubusercontent.com/67249292/120637994-c808ea80-c499-11eb-84e7-126c25913f2c.png)
+# Configure the model :
 
-Example of Model Tomato leaf classification Visualization results :
+Although this method is called compile(), it's basically a configuration step that's required before we can start training. And because the majority of the model graph is frozen in the base model, weights from only the last convolution and dense layers are trainable.
 
-![model1](https://user-images.githubusercontent.com/67249292/120635482-b96d0400-c496-11eb-80b7-d810949db504.png)
+# Train the model
 
-# Compile model
-* Optimizer = is the optimization method used.
-* loss = is a method of measuring the loss value based on what value. because Making the data flow we use categorical so that in this loss value we also use categorical loss.
-* Metrics = The matrix value measured in this project we use the accuracy value as the measurement value.
+Now we can train the model using data provided by the train_generator and val_generator that we created at the beginning.
+![image](https://user-images.githubusercontent.com/67249292/120916823-f07d2880-c6d5-11eb-8635-c5323aca9741.png)
 
-# Model Tomato leaf classification training process :
+# Fine tune the base model
 
-![image](https://user-images.githubusercontent.com/67249292/120635149-554a4000-c496-11eb-8474-657716dbb722.png)
+So far, we've only trained the classification layers—the weights of the pre-trained network were not changed.
 
-And the results of the training are like that, the results are apparently not optimal but enough for this experiment, it turns out to be for this model. Where :
+One way we can increase the accuracy is to train (or "fine-tune") more layers from the pre-trained model. That is, we'll un-freeze some layers from the base model and adjust those weights (which were originally trained with 1,000 ImageNet classes) so they're better tuned for features found in our flowers dataset.
 
-![image](https://user-images.githubusercontent.com/67249292/120635987-4a43df80-c497-11eb-95cc-63b23a35a5a4.png)
+# Un-freeze more layers
+So instead of freezing the entire base model, we'll freeze individual layers.
 
-![image](https://user-images.githubusercontent.com/67249292/120636020-56c83800-c497-11eb-85ab-01e9086f2e49.png)
+# Reconfigure the model
+Now configure the model again, but this time with a lower learning rate (the default is 0.001).
 
-You can check here to see all the notebooks that have been built [notebook Build ML](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/notebook/BuildML)
+# Continue training
+Now let's fine-tune all trainable layers. This starts with the weights we already trained in the classification layers, so we don't need as many epochs.
 
-# Model Evaluation
+Our model better, but it's not ideal.
 
-* Model Apple leaf classification :
+The validation loss is still higher than the training loss, so there could be some overfitting during training. The overfitting might also be because the new training set is relatively small with less intra-class variance, compared to the original ImageNet dataset used to train [MobileNet V2](https://www.tensorflow.org/api_docs/python/tf/keras/applications/mobilenet_v2).
 
-Accuracy on training data: 0.9968, 
-Loss on training data: 0.0064 
-
-Accuracy on test data: 1.0000,
-Loss on test data: 0.0033 
-
-* Model Corn leaf classification :
-
-Accuracy on training data: 0.9869,
-Loss on training data: 0.0429 
-
-Accuracy on test data: 0.9836, 
-Loss on test data: 0.0422 
-
-* Model Grape leaf classification :
-
-Accuracy on training data: 0.9956, 
-Loss on training data: 0.0125 
-
-Accuracy on test data: 0.9945, 
-Loss on test data: 0.0299 
-
-* Model Leaf classification :
-
-Accuracy on training data: 0.9881, 
-Loss on training data: 0.0361 
-
-Accuracy on test data: 0.9888, 
-Loss on test data: 0.0383 
-
-* Model Potato leaf classification :
-
-Accuracy on training data: 1.0000, 
-Loss on training data: 0.0014 
-
-Accuracy on test data: 1.0000, 
-Loss on test data: 0.0022 
-
-* Model Rice leaf classification :
-
-Accuracy on training data: 0.8333, 
-Loss on training data: 16.4998 
-
-Accuracy on test data: 0.6667, 
-Loss on test data: 19.8331 
-
-* Model Tomato leaf classification :
-
-Accuracy on training data: 0.9838, 
-Loss on training data: 0.0629 
-
-Accuracy on test data: 0.9875,
-Loss on test data: 0.0487 
+So this model isn't trained to an accuracy that's production ready, but it works well enough as a demonstration.
 
 # Save all the models that have been trained
 You can check here to see all the models that have been built [model_project](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/model_project)
 
+# Convert Model to TFLite
+Ordinarily, creating a TensorFlow Lite model is just a few lines of code with [TFLiteConverter](https://www.tensorflow.org/api_docs/python/tf/lite/TFLiteConverter). For example, this creates a basic (un-quantized) TensorFlow Lite model.
+
+However, this .tflite file still uses floating-point values for the parameter data, and we need to fully quantize the model to int8 format.
+
+To fully quantize the model, we need to perform [post-training quantization](https://www.tensorflow.org/lite/performance/post_training_quantization) with a representative dataset, which requires a few more arguments for the TFLiteConverter, and a function that builds a dataset that's representative of the training dataset.
+
+You can check here to see [result TFLite](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/TFLite)
+
+# Compare the accuracy
+we have a fully quantized TensorFlow Lite model. To be sure the conversion went well, so we compare it.
+
+But again, these results are not ideal but better for prototype.
+
 # Creating an example deploy Production Function using Flask Python
 You can check here to see deploy with [Flask](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/Flask/Deploy%20Test)
 
-# Convert Model to TFLite
-You can check here to see how to [covert to TFLite](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/notebook/Deploy)
-
-and You can check here to see [result TFLite](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/TFLite)
 
