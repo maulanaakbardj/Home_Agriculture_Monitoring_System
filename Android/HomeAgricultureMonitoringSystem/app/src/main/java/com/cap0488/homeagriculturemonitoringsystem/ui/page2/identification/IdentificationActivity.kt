@@ -8,7 +8,11 @@ import android.provider.MediaStore
 import android.util.Log
 import androidx.core.net.toUri
 import com.cap0488.homeagriculturemonitoringsystem.databinding.ActivityIdentificationBinding
+import com.cap0488.homeagriculturemonitoringsystem.ml.ModetomatQuant
 import com.cap0488.homeagriculturemonitoringsystem.ui.page2.result.ResultActivity
+import org.tensorflow.lite.DataType
+import org.tensorflow.lite.support.image.TensorImage
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 
 
 @Suppress("DEPRECATION")
@@ -34,134 +38,65 @@ class IdentificationActivity : AppCompatActivity() {
 
         Log.d("cektitel",titleJenis)
 
-        //access label
-       /* when(titleJenis){
-            "Apel" ->{
-                filename = "labelapel.txt"
-                inputString = application.assets.open(filename).bufferedReader().use { it.readText() }
-                townList = inputString.split("\n")
-            }
-            "Jagung" ->{
-                filename = "labeljagung.txt"
-                inputString = application.assets.open(filename).bufferedReader().use { it.readText() }
-                townList = inputString.split("\n")
-            }
-
-            "Tomat"->{
-                filename = "labeltomat.txt"
-                inputString = application.assets.open(filename).bufferedReader().use { it.readText() }
-                townList = inputString.split("\n")
-            }
-        }
-*/
+        filename = "labelsTomat.txt"
+        inputString = application.assets.open(filename).bufferedReader().use { it.readText() }
+        townList = inputString.split("\n")
 
 
-
-
-/*
         binding.buttonIdentifikasi.setOnClickListener {
 
+            val hasil = allModel()
+            Log.d("cekhasil1",hasil)
 
-            when(titleJenis){
-                "Apel" ->{
-                    //val hasil = apelModel()
-                    val i = Intent(this, ResultActivity::class.java)
-                    i.putExtra(ResultActivity.EXTRA,foto)
-                    i.putExtra(ResultActivity.HASIL,titleJenis)
-                    startActivity(i)
-                    finish()
-
-                }
-                "Jagung" ->{
-                    //val hasil = jagungModel()
-                    val i = Intent(this, ResultActivity::class.java)
-                    i.putExtra(ResultActivity.EXTRA,foto)
-                    i.putExtra(ResultActivity.HASIL,titleJenis)
-                    startActivity(i)
-                    finish()
-                }
-
-                "Tomat"->{
-                    //val hasil = tomatModel()
-
-                    val i = Intent(this, ResultActivity::class.java)
-                    i.putExtra(ResultActivity.EXTRA,foto)
-                    i.putExtra(ResultActivity.HASIL,titleJenis)
-                    startActivity(i)
-                    finish()
-
-                }
-            }
+            val i = Intent(this, ResultActivity::class.java)
+            i.putExtra(ResultActivity.EXTRA,foto)
+            i.putExtra(ResultActivity.HASIL,hasil)
+            startActivity(i)
+            finish()
 
 
         }
-*/
 
     }
 
-    /*private fun apelModel():String{
-        val model = ModelApel.newInstance(this)
-        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 150, 150, 3), DataType.FLOAT32)
+
+    private fun allModel():String{
+
+        var resized = Bitmap.createScaledBitmap(bitmap,224, 224, true)
+        val model = ModetomatQuant.newInstance(this)
+
+        var tbuffer = TensorImage.fromBitmap(resized)
+        var byteBuffer = tbuffer.buffer
+
+
+        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.UINT8)
+
+
+        Log.d("hasilinputFeature0",inputFeature0.toString())
+        inputFeature0.loadBuffer(byteBuffer)
+
         val outputs = model.process(inputFeature0)
         val outputFeature0 = outputs.outputFeature0AsTensorBuffer.floatArray
 
-        val max = getMax(outputFeature0)
-        val hasil = townList[max]
-        Log.d("hasil",hasil)
-        //binding.tvHasil.text = hasil
+        Log.d("hasilcek",outputFeature0.toString())
+
+        var max = getMax(outputFeature0)
+       // binding.resultPred.text = townList[max]
 
         model.close()
 
-        return hasil
+        return townList[max]
 
     }
 
-    private fun jagungModel():String{
-        val model = ModelJagung.newInstance(this)
-        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 150, 150, 3), DataType.FLOAT32)
-        val outputs = model.process(inputFeature0)
-        val outputFeature0 = outputs.outputFeature0AsTensorBuffer.floatArray
-
-        val max = getMax(outputFeature0)
-        val hasil = townList[max]
-        Log.d("hasil",hasil)
-        //binding.tvHasil.text = hasil
-
-        model.close()
-
-        return hasil
-
-    }
-
-    private fun tomatModel():String{
-        val model = ModelTomat.newInstance(this)
-        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 150, 150, 3), DataType.FLOAT32)
-        val outputs = model.process(inputFeature0)
-        val outputFeature0 = outputs.outputFeature0AsTensorBuffer.floatArray
-
-        val max = getMax(outputFeature0)
-        val hasil = townList[max]
-        Log.d("hasil",hasil)
-        //binding.tvHasil.text = hasil
-
-        model.close()
-
-        return hasil
-
-    }*/
 
 
     private fun getMax(arr:FloatArray):Int{
 
 
-        val max = if(titleJenis == "tomat")
-            9
-        else
-            3
-
         var ind = 0
         var min = 0.0f
-        for (i in 0..max){
+        for (i in 0..9){
             if (arr[i]>min){
                 ind = i
                 min = arr[i]

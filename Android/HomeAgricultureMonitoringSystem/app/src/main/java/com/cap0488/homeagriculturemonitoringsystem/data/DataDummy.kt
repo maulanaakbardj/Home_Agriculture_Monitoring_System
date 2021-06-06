@@ -99,25 +99,28 @@ object DataDummy {
 
         var plantType = ArrayList<PlantTypeModel>()
 
+
+        plantType.add(PlantTypeModel(
+            "Anggur",
+            R.drawable.grape_icon
+        ))
+
         plantType.add(PlantTypeModel(
                 "Apel",
-                R.drawable.ic_home_black_24dp
+                R.drawable.apple_icon
         ))
 
         plantType.add(PlantTypeModel(
                 "Jagung",
-                R.drawable.ic_home_black_24dp
+                R.drawable.jagung_icon
         ))
 
         plantType.add(PlantTypeModel(
                 "Tomat",
-                R.drawable.ic_home_black_24dp
+                R.drawable.tomato_icon
         ))
 
-        plantType.add(PlantTypeModel(
-                "Lainnya",
-                R.drawable.ic_home_black_24dp
-        ))
+
 
 
 
