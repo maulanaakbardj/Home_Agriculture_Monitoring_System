@@ -103,7 +103,7 @@ class ImageActivity : AppCompatActivity() {
         i.putExtra(IdentificationActivity.EXTRAFOTO,uriFoto)
         i.putExtra(IdentificationActivity.EXTRAJENIS,jenis)
         startActivity(i)
-        finish()
+        //finish()
     }
 
     companion object{
