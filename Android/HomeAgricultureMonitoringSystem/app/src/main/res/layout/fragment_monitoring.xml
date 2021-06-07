@@ -84,13 +84,14 @@
             />
 
         <TextView
+            android:id="@+id/humidity"
             android:layout_marginStart="65dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/k_udara"
             android:layout_marginTop="10dp"
-            android:text="45%"
-            android:textSize="40sp"
+            android:text="100%"
+            android:textSize="35sp"
             android:textColor="?attr/colorPrimary"
             android:layout_marginHorizontal="5dp"
             android:gravity="center_vertical|center_horizontal"
@@ -118,14 +119,14 @@
 
         <TextView
             android:textColor="?attr/colorPrimary"
-            android:id="@+id/hasil_k_tanah"
+            android:id="@+id/soilMoisture"
             android:layout_marginStart="250dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/k_tanah"
             android:layout_marginTop="10dp"
-            android:text="90%"
-            android:textSize="40sp"
+            android:text="100%"
+            android:textSize="35sp"
 
             android:layout_marginHorizontal="5dp"
             android:gravity="center_vertical|center_horizontal"
@@ -151,13 +152,13 @@
 
         <TextView
             android:textColor="?attr/colorPrimary"
-            android:id="@+id/hasil_suhu"
+            android:id="@+id/temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/suhu"
             android:layout_marginTop="10dp"
-            android:text="26°C"
-            android:textSize="40sp"
+            android:text="26,5°C"
+            android:textSize="35sp"
             android:layout_centerHorizontal="true"
             android:gravity="center_vertical|center_horizontal"
             android:layout_marginBottom="30dp"
