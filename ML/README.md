@@ -1,5 +1,5 @@
 # Machine Learning Home Agriculture Monitoring System
-We'll use TensorFlow 2 to create an image classification model, train it with a leaf disease dataset, and convert it to TensorFlow Lite using post-training quantization).
+We'll use TensorFlow 2 to create an image classification model, train it with a leaf disease dataset, and convert it to TensorFlow Lite using post-training quantization.
 
 The model is based on a pre-trained version of MobileNet V2. We'll start by retraining only the classification layers, reusing MobileNet's pre-trained feature extractor layers. Then we'll fine-tune the model by updating weights in some of the feature extractor layers. This type of transfer learning is much faster than training the entire model from scratch.
 
