@@ -78,7 +78,7 @@ So this model isn't trained to an accuracy that's production ready, but it works
 You can check here to see all the models that have been built [model_project](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/model_project)
 
 # Convert Model to TFLite
-Ordinarily, creating a TensorFlow Lite model is just a few lines of code with [TFLiteConverter](https://www.tensorflow.org/api_docs/python/tf/lite/TFLiteConverter). For example, this creates a basic (un-quantized) TensorFlow Lite model.
+Ordinarily, creating a TensorFlow Lite model is just a few lines of code with [TFLiteConverter](https://www.tensorflow.org/api_docs/python/tf/lite/TFLiteConverter). 
 
 However, this .tflite file still uses floating-point values for the parameter data, and we need to fully quantize the model to int8 format.
 
