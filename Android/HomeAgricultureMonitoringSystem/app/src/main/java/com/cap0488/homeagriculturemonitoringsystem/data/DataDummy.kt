@@ -9,9 +9,47 @@ object DataDummy {
     fun generateArticle():ArrayList<ArticleModel>{
         var article = ArrayList<ArticleModel>()
 
+
+        article.add(ArticleModel(
+            "Beda Warna dan Rasa, Inilah 3 Jenis Buah Anggur",
+            R.drawable.article_anggur,
+            "Sebagian orang mungkin menganggap buah anggur hanyalah buah anggur berwarna ungu dengan berbiji kecil dan memiliki daging yang manis.\n" +
+                    "\n" +
+                    "Buah yang dapat dikonsumsi langsung atau dimasukkan menjadi pelengkap hidangan lainnya ini, ternyata punya banyak macam warna dan jenisnya.\n" +
+                    "\n" +
+                    "Meski semua jenis anggur tampak biasa saja, namun setiap nama dan warnanya berbeda rasa maupun pola pertumbuhannya.\n" +
+                    "\n" +
+                    "Ya, ada ribuan subspesies dan kultivar anggur yang berbeda. Yuk, langsung cek 5 jenis buah anggur yang sudah dirangkum oleh Popmama.com:" +
+                    "\n\n\n1. Cotton candy grapes memiliki rasa seperti gula kapas\n"+
+                    "Pernah terbayang nggak kalau buah anggur berasa permen?\n" +
+                    "\n" +
+                    "Ya, buah jenis ini memang ada. Namanya cotton candy grapes. Di mana cotton candy grapes adalah buah anggur hijau yang memiliki rasa seperti gula kapas.\n" +
+                    "\n" +
+                    "Cotton candy merupakan jenis anggur yang juicy dan sangat populer yang termasuk varian produk buah segar. Buah ini merupakan kreasi dari ahli hortikultura David Cain bersama tim ahlinya di International Fruit Genetics, Bakersfield, California. \n" +
+                    "\n" +
+                    "Cotton candy grapes tidak ditambahkan perasa buatan maupun diciptakan dengan teknologi rekayasa genetik. Namun rasa anggur yang unik didapatkan melalui proses persilangan varietas tanaman anggur yang 100 persen alami.\n"+
+                    "\n\n2. Kyoho termasuk anggur yang kualitasnya sangat terjaga\n"+
+                    "Kualitas premium adalah konsep yang diusung oleh produk-produk made in Japan, termasuk buah anggur.\n" +
+                    "\n" +
+                    "Meski kyoho harganya mahal, namun kualitas anggur tersebut sangat terjaga. Dalam masakan, negara Jepang menjadikan buah anggur sebagai sajian penutup layaknya dessert atau dicampur menjadi koktail chuhai tradisional.\n" +
+                    "\n" +
+                    "Ya, jenis anggur kyoho adalah jumlah terbanyak di pasaran Jepang. Keistimewaan anggur kyoho ini memiliki rasa manis dan masam yang menyegarkan.\n" +
+                    "\n" +
+                    "Anggur kyoho memiliki ukuran sebesar buah plum. Warnanya hitam dan ungu gelap. Selain itu, anggur kyoho berkulit tebal dan punya biji besar yang tidak bisa dimakan.\n"+
+                    "\n\n3. Red globe begitu renyah dan cukup lembut saat dimakan\n"+
+                    "Anggur red globe merupakan varietas anggur merah berbiji dengan ukuran yang besar.\n" +
+                    "\n" +
+                    "Sejak dulu jenis anggur ini diimpor Asia dari Amerika dan Australia. Kini sudah dibudidayakan di Indonesia. Di mana anggur red globe dikembangkan dari varietas kaisar yang dilakukan pada tahun 1980.\n" +
+                    "\n" +
+                    "Red globe berbentuk bulat agak besar dan kerucut yang terisi penuh serta tebal. Sudah jelas, anggur red globe berwarna merah.\n" +
+                    "\n" +
+                    "Buahnya begitu renyah dan cukup lembut saat dimakan. Rasanya pun cukup manis."
+        )
+        )
+
         article.add(ArticleModel(
                 "Makanlah Buah Apel Setiap Hari untuk Dapatkan 6 Khasiat Sehat Ini",
-                R.drawable.ic_home_black_24dp,
+                R.drawable.article_apel,
                 "Sejak dulu kala apel dipercaya sebagai penjaga kesehatan. Ini tidak asal saja tetapi didukung oleh beragam penelitian. Karenanya makanlah apel setiap hari.\n" +
                         "\n" +
                         "Apel punya puluhan jenis di dunia. Buah yang renyah dengan rasa manis asam dan beraroma wangi ini enak dimakan segar atau dibuat minuman serta dessert. Untuk menjaga kesehatan, selain olahraga dan makan dengan pola sehat, makan sebutir apel dianjurkan oleh para ahli.\n" +
@@ -45,7 +83,7 @@ object DataDummy {
 
         article.add(ArticleModel(
                 "Mengenal Lebih Dekat Perbedaan Jagung Manis Dan Jagung Pakan",
-                R.drawable.ic_home_black_24dp,
+                R.drawable.article_jagung,
                 "Menurut ahli biologi evolusi, jagung yang ada sekarang telah mengalami evolusi dari tanaman serealia primitif yang bijinya terbuka dan jumlahnya sedikit menjadi tanaman yang produktif.\n" +
                         "\n" +
                         "Biji banyak pada tongkol tertutup mempunyai nilai jual yang tinggi dan banyak ditanam sebagai bahan pangan.\n" +
@@ -75,7 +113,7 @@ object DataDummy {
 
         article.add(ArticleModel(
                 "9 Manfaat Tomat yang Menyehatkan dan Menyegarkan Jiwa Raga",
-                R.drawable.ic_home_black_24dp,
+                R.drawable.article_tomat,
                 "Memiliki warna merah merona yang menarik, tomat banyak dimanfaatkan sebagai garnish atau penghias makanan. Rasanya yang masam juga membuat tomat sering dijadikan sebagai pemberi rasa tambahan pada beragam jenis makanan. Hal tersebut membuat tomat mudah ditemukan di pasaran dan tak jarang dikonsumsi oleh masyarakat.\n" +
                         "\n" +
                         "Selain itu, tomat juga memiliki beberapa jenis yang biasa dijadikan makanan. Meski kebanyakan tomat perlu dimasak terlebih dahulu sebelum dimakan, ada pula jenis yang bisa langsung dikonsumsi mentah-mentah. Sebagai contoh adalah tomat apel yang memiliki rasa manis dan mengandung banyak air.\n" +
