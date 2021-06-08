@@ -57,7 +57,7 @@ Now we can train the model using data provided by the train_generator and val_ge
 
 So far, we've only trained the classification layers—the weights of the pre-trained network were not changed.
 
-One way we can increase the accuracy is to train (or "fine-tune") more layers from the pre-trained model. That is, we'll un-freeze some layers from the base model and adjust those weights (which were originally trained with 1,000 ImageNet classes) so they're better tuned for features found in our leaf disease dataset dataset.
+One way we can increase the accuracy is to train (or "fine-tune") more layers from the pre-trained model. That is, we'll un-freeze some layers from the base model and adjust those weights (which were originally trained with 1,000 ImageNet classes) so they're better tuned for features found in our leaf disease dataset.
 
 # Un-freeze more layers
 So instead of freezing the entire base model, we'll freeze individual layers.
