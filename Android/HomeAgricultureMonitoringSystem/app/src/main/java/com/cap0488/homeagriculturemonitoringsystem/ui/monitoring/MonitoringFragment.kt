@@ -34,11 +34,11 @@ class MonitoringFragment : Fragment() {
             binding.soilMoisture.text = it.soilMoisture+"%"
             binding.humidity.text = it.humidity+"%"
             binding.temperature.text = it.temperature+"°C"
-            binding.progresBar.visibility = View.INVISIBLE
+            binding.server.text = "Server: On"
 
         })
 
-       monitoringViewModel.lamp.observe(requireActivity(),{
+        monitoringViewModel.lamp.observe(requireActivity(),{
            binding.btnKipas.text = it.pump
 
            binding.btnLampu.text = it.lamp
@@ -87,6 +87,9 @@ class MonitoringFragment : Fragment() {
             imm.hideSoftInputFromWindow(view.windowToken, 0)
 
         }
+
+
+        binding.progresBar.visibility = View.INVISIBLE
 
 
 

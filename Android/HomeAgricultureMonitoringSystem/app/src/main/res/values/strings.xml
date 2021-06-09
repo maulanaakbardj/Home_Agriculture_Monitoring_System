@@ -13,4 +13,13 @@
     <string name="gallery">Gallery</string>
     <string name="identifikasi_gambar">Identifikasi Gambar</string>
     <string name="sehat">Sehat</string>
+    <string name="pompa_air">Pompa Air</string>
+    <string name="penerangan">Penerangan</string>
+    <string name="template_suhu">26,5°C</string>
+    <string name="suhu">Suhu</string>
+    <string name="template_soil">100%</string>
+    <string name="kelembapan_tanah">Kelembapan Tanah</string>
+    <string name="template_humidity">100%</string>
+    <string name="kelembapan_udara">Kelembapan Udara</string>
+    <string name="hams">HAMS</string>
 </resources>
