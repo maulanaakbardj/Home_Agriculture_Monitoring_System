@@ -12,25 +12,28 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/teslogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/teslogo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HomeAgricultureMonitoringSystem">
-        <activity android:name=".ui.page2.result.ResultActivity"></activity>
+        android:theme="@style/Theme.HomeAgricultureMonitoringSystem"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ui.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.page2.result.ResultActivity" />
         <activity android:name=".ui.page2.identification.IdentificationActivity" />
         <activity android:name=".ui.page2.image.ImageActivity" />
         <activity android:name=".ui.page1.article.ArticleActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
