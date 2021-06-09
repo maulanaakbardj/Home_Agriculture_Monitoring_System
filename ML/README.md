@@ -91,7 +91,4 @@ We have a fully quantized TensorFlow Lite model. To be sure the conversion went 
 
 But again, these results are not ideal but better for prototype.
 
-# Creating an example deploy Production Function using Flask Python
-You can check here to see deploy with [Flask](https://github.com/maulanaakbardj/Home-Agriculture-Monitoring-System/tree/main/ML/Flask/Deploy%20Test)
-
 
