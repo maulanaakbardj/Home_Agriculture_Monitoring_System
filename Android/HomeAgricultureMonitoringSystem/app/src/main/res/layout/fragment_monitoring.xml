@@ -1,231 +1,267 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.monitoring.MonitoringFragment">
 
-
-    <TextView
-        android:id="@+id/title_app"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:textStyle="bold"
-        android:paddingStart="15dp"
-        android:paddingBottom="10dp"
-        android:fontFamily="monospace"
-        android:textSize="25sp"
-        android:background="?attr/colorPrimaryVariant"
-
-        android:text="HAMS" />
-
-    <TextView
-        android:layout_below="@id/title_app"
-        android:id="@+id/text_nameapp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingStart="35dp"
-        android:paddingBottom="10dp"
-        android:fontFamily="monospace"
-        android:textSize="10sp"
-        android:background="?attr/colorPrimaryVariant"
-
-        android:text="@string/app_name" />
-
-    <TextView
-        android:layout_below="@+id/text_nameapp"
-        android:id="@+id/wave"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/ic_wave"
-
-        />
-
-    <TextView
-        android:layout_below="@+id/wave"
-        android:id="@+id/text_garden"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="monospace"
-        android:textSize="20sp"
-        android:textStyle="bold"
-
-        android:text="@string/garden" />
-
-
     <RelativeLayout
-        android:layout_below="@+id/text_garden"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/view_costum"
-        android:id="@+id/cv1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/cv1" >
-
-        <TextView
-            android:id="@+id/k_udara"
-            android:layout_marginStart="45dp"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:layout_marginTop="10dp"
-            android:text="Kelembapan Udara"
-            android:textStyle="bold"
-
-            android:textColor="?attr/colorPrimary"
-
-            />
-
-        <TextView
-            android:id="@+id/humidity"
-            android:layout_marginStart="65dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/k_udara"
-            android:layout_marginTop="10dp"
-            android:text="100%"
-            android:textSize="35sp"
-            android:textColor="?attr/colorPrimary"
-            android:layout_marginHorizontal="5dp"
-            android:gravity="center_vertical|center_horizontal"
-
-            android:background="@drawable/o_costum"
-            />
-
-
-
-
-        <TextView
-            android:layout_marginStart="230dp"
-            android:id="@+id/k_tanah"
-            android:layout_marginLeft="30dp"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:text="Kelembapan Tanah"
-            android:textStyle="bold"
-            android:textColor="?attr/colorPrimary"
-
-            />
-
-        <TextView
-            android:textColor="?attr/colorPrimary"
-            android:id="@+id/soilMoisture"
-            android:layout_marginStart="250dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/k_tanah"
-            android:layout_marginTop="10dp"
-            android:text="100%"
-            android:textSize="35sp"
-
-            android:layout_marginHorizontal="5dp"
-            android:gravity="center_vertical|center_horizontal"
-
-            android:background="@drawable/o_costum"
-            />
-
-
-
-
-        <TextView
-            android:id="@+id/suhu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="180dp"
-            android:text="Suhu"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="?attr/colorPrimary"
-            android:layout_centerHorizontal="true"
-
-            />
-
-        <TextView
-            android:textColor="?attr/colorPrimary"
-            android:id="@+id/temperature"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/suhu"
-            android:layout_marginTop="10dp"
-            android:text="26,5°C"
-            android:textSize="35sp"
-            android:layout_centerHorizontal="true"
-            android:gravity="center_vertical|center_horizontal"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/o_costum"
-            />
-
-
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:background="@drawable/view_costum"
-        android:layout_below="@id/cv1"
-        android:id="@+id/cv2"
-        android:layout_marginStart="10dp"
-        android:layout_width="185dp"
         android:layout_height="wrap_content">
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/title_app"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pendingin Suhu"
-            android:textSize="20sp"
-            android:textColor="?attr/colorPrimary"
+            android:paddingTop="5dp"
             android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/title_kipas"
-            />
+            android:paddingStart="15dp"
+            android:paddingBottom="10dp"
+            android:fontFamily="monospace"
+            android:textSize="25sp"
+            android:background="?attr/colorPrimaryVariant"
 
-        <Switch
-            android:layout_marginBottom="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/title_kipas"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-    </RelativeLayout>
+            android:text="HAMS" />
 
-
-    <RelativeLayout
-        android:background="@drawable/view_costum"
-        android:layout_below="@id/cv1"
-        android:id="@+id/cv3"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_width="185dp"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/cv2">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_below="@id/title_app"
+            android:id="@+id/text_nameapp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Penerangan"
-            android:textSize="20sp"
-            android:textColor="?attr/colorPrimary"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/title_lampu"
+            android:paddingTop="5dp"
+            android:paddingStart="35dp"
+            android:paddingBottom="10dp"
+            android:fontFamily="monospace"
+            android:textSize="10sp"
+            android:background="?attr/colorPrimaryVariant"
+
+            android:text="@string/app_name" />
+
+        <TextView
+            android:layout_below="@+id/text_nameapp"
+            android:id="@+id/wave"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_wave"
+
             />
-        <Switch
-            android:layout_marginBottom="10dp"
+
+        <TextView
+            android:layout_below="@+id/wave"
+            android:id="@+id/text_garden"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="monospace"
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+            android:text="@string/garden" />
+
+
+        <RelativeLayout
+            android:layout_below="@+id/text_garden"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/view_costum"
+            android:id="@+id/cv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/cv1" >
+
+            <TextView
+                android:id="@+id/k_udara"
+                android:layout_marginStart="45dp"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                android:text="Kelembapan Udara"
+                android:textStyle="bold"
+
+                android:textColor="?attr/colorPrimary"
+
+                />
+
+            <TextView
+                android:id="@+id/humidity"
+                android:layout_marginStart="65dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/k_udara"
+                android:layout_marginTop="10dp"
+                android:text="100%"
+                android:textSize="35sp"
+                android:textColor="?attr/colorPrimary"
+                android:layout_marginHorizontal="5dp"
+                android:gravity="center_vertical|center_horizontal"
+
+                android:background="@drawable/o_costum"
+                />
+
+
+
+
+            <TextView
+                android:layout_marginStart="230dp"
+                android:id="@+id/k_tanah"
+                android:layout_marginLeft="30dp"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:text="Kelembapan Tanah"
+                android:textStyle="bold"
+                android:textColor="?attr/colorPrimary"
+
+                />
+
+            <TextView
+                android:textColor="?attr/colorPrimary"
+                android:id="@+id/soilMoisture"
+                android:layout_marginStart="250dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/k_tanah"
+                android:layout_marginTop="10dp"
+                android:text="100%"
+                android:textSize="35sp"
+
+                android:layout_marginHorizontal="5dp"
+                android:gravity="center_vertical|center_horizontal"
+
+                android:background="@drawable/o_costum"
+                />
+
+
+
+
+            <TextView
+                android:id="@+id/suhu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="180dp"
+                android:text="Suhu"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorPrimary"
+                android:layout_centerHorizontal="true"
+
+                />
+
+            <TextView
+                android:textColor="?attr/colorPrimary"
+                android:id="@+id/temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/suhu"
+                android:layout_marginTop="10dp"
+                android:text="26,5°C"
+                android:textSize="35sp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/o_costum"
+                />
+
+
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progres_Bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/title_lampu"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
+            android:layout_centerInParent="true"/>
+        <RelativeLayout
+
+            android:background="@drawable/view_costum"
+            android:layout_below="@id/cv1"
+            android:id="@+id/cv2"
+            android:layout_marginStart="10dp"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pendingin Suhu"
+                android:textSize="20sp"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/title_kipas"
+                />
+
+            <Button
+                android:textColor="@color/black"
+                android:background="@drawable/o_costum"
+                android:layout_margin="20dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/title_kipas"
+                android:id="@+id/btn_kipas"
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:background="@drawable/view_costum"
+            android:layout_below="@id/cv1"
+            android:id="@+id/cv3"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/cv2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Penerangan"
+                android:textSize="20sp"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/title_lampu"
+                />
+
+            <Button
+                android:textColor="@color/black"
+                android:background="@drawable/o_costum"
+                android:layout_margin="20dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/title_lampu"
+                android:id="@+id/btn_lampu"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/cv3"/>
+
     </RelativeLayout>
 
-</RelativeLayout>
+
+
+
+
+
+</ScrollView>

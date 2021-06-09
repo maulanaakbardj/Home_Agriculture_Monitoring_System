@@ -17,11 +17,13 @@
         android:layout_height="wrap_content"
         >
         <TextView
-            android:layout_margin="10dp"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_article"
             android:textSize="15sp"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:text="@string/article_title"
             />
@@ -30,8 +32,9 @@
             android:id="@+id/iv_article"
             android:layout_margin="10dp"
             android:layout_below="@+id/tv_article"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:scaleType="fitCenter"
             tools:src="@drawable/ic_home_black_24dp"
             android:contentDescription="@string/image_content" />

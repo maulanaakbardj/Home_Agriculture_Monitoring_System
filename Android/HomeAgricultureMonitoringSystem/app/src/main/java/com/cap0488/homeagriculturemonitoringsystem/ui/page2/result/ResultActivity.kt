@@ -71,34 +71,6 @@ class ResultActivity : AppCompatActivity() {
                 .addOnFailureListener { exception ->
                 }
 
-        /*val docRef = db.collection("penyakit_tomat").document("Kawar Daun") //akses doc failed
-        Log.d("cekhasil",docRef.toString())
-
-        docRef.get()
-            .addOnSuccessListener { document ->
-                if (document != null) {
-                    Log.d("cekhas", "DocumentSnapshot data: ${document.data}")
-                    binding.penyakit.text = document.getString("nama")
-                    binding.penjelasanPenyakit.text = document.getString("penjelasan")
-                    binding.solusiPenyakit.text = document.getString("solusi")
-                    binding.progresBar.visibility= View.GONE
-
-
-                } else {
-                    Log.d("cekgagagl", "kososmg")
-
-                    binding.penyakit.text = "-"
-                    binding.penjelasanPenyakit.text = "-"
-                    binding.solusiPenyakit.text = "-"
-                    binding.progresBar.visibility= View.GONE
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.d("TAG", "get failed with ", exception)
-                binding.progresBar.visibility= View.GONE
-
-            }*/
-
 
 
     }
