@@ -14,6 +14,6 @@ gcloud beta compute --project=capstone-314901 instances create capstone-server -
 
 ## Deploy Server for IOT
 - open SSH
-- copy flask-deployment folder to your server (or you can run '''git clone https://github.com/semaralawa/flask-deployment''')
-- go to flask-deployment directory ('''cd flask-deployment/''')
-- run : '''python3 -m main'''
+- copy flask-deployment folder to your server (or you can run `git clone https://github.com/semaralawa/flask-deployment`)
+- go to flask-deployment directory (`cd flask-deployment/`)
+- run : `python3 -m main`
