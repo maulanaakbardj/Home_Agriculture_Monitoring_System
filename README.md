@@ -15,3 +15,7 @@ In this repository, there are several learning path activities, each activity ca
 2. In the electronics part, making IoT hardware which will be connected to the Android section assisted by the cloud computing part.
 3. In the cloud computing part, creating a cloud architecture that connects the IoT hardware that will be connected to the Android part and the application database.
 4. On the Android part, making an overall application combines all the features of ML images classification of leaf diseases and plant IoT monitoring features into one Android application.
+
+# Documentation App
+
+![image](https://user-images.githubusercontent.com/67249292/124629457-aa211200-deab-11eb-88cb-d0ad74ef421e.png)
